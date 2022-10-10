@@ -134,7 +134,7 @@ a:visited{
         align-items: flex-end;
     }
 
-    .gallery, h2{
+    .gallery, h2#gallery{
         display: none;
     }
    
