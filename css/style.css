@@ -15,6 +15,7 @@ header{
 
 .nav_links{
     display: flex;
+    flex-direction: column;
 }
 
 img#logo{
