@@ -1,3 +1,21 @@
+/*——————————————————————
+[Table of contents]
+
+1. Body
+
+2. Header
+
+3. Navigation - .nav_links, a (visited links)
+
+5. Images - img#logo 
+
+6. h2 - .pricing, .card, .gallery 
+
+——————————————————————-*/
+
+
+
+/* Styling for mobile view */
 body{
     font-family: 'Poppins', serif;
     background-image: url("../images/concrete_seamless.png");
@@ -18,9 +36,14 @@ header{
     flex-direction: column;
 }
 
+a:visited{
+    color: blue;
+    text-decoration-color: blue;
+}
+
+/* Animation */
 img#logo{
     animation: grow 5s;
-
 }
 @keyframes grow {
     0%{
@@ -34,11 +57,13 @@ img#logo{
     }
 }
 
-
-a:visited{
-    color: blue;
-    text-decoration-color: blue;
+/* If user prefers reduces motion */
+@media(prefers-reduced-motion){
+    img#logo{
+        animation: none;
+    }
 }
+
 
 .card > header{
     background: #288088;
@@ -85,6 +110,8 @@ a:visited{
     justify-content: center;
 }
 
+
+/* Styling for desktop view */
 @media screen and (min-width: 900px){
     header {
         display: flex;
@@ -103,26 +130,19 @@ a:visited{
     }
 }
 
-@media(prefers-reduced-motion){
-    img#logo{
-        animation: none;
-    }
-}
 
+/* Styling for print view*/
 @media print{
+    
     body{
         font-family: Arial, Helvetica;
         background: #f1f1f1
     }
-    .card{
-        border: solid 2px #45ADDD;
-        flex-basis: 325px;
-        flex: 1;
-    }
-   
-    header{
+
+   header{
         flex-direction: column;
     }
+    
     nav{
         width: 100%;
     }
@@ -130,16 +150,21 @@ a:visited{
         flex-direction: row;
         justify-content: space-evenly;
     }
-
+    
     .pricing{
         align-items: flex-end;
     }
-
-    .gallery, h2#gallery{
-        display: none;
-    }
-   
-   .pricing li:nth-child(2)::after{
+    .pricing li:nth-child(2)::after{
         content: "👍";
+    }
+    
+   .card{
+        border: solid 2px #45ADDD;
+        flex-basis: 325px;
+        flex: 1;
+    }
+
+   .gallery, h2#gallery{
+        display: none;
     }
 }
